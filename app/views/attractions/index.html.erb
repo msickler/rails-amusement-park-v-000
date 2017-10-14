@@ -2,9 +2,9 @@
 <ul>
   <% @attractions.each do |attraction| %>
   <li><%= "#{attraction.name}" %> - - -
-
-    <%= button_to "Go on this ride", user_attraction_path(@user, @attraction), :method => :patch unless @user.admin %>
-    <%= link_to "Show #{attraction.name}", attraction_path(attraction) if @user.admin %></li>
+     <%= link_to "Go on #{attraction.name}", attraction_path(attraction) unless @user.admin %>
+     <%= link_to "Show #{attraction.name}", attraction_path(attraction) if @user.admin %>
+   </li>
   <% end %>
 </ul>
 <p><% if @user.admin %>
