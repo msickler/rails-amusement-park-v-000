@@ -32,14 +32,22 @@ class AttractionsController < ApplicationController
        @attraction.update(attraction_params)
         flash[:notice] = "#{@attraction.name} has been updated!"
        redirect_to attraction_path(@attraction)
-     else @user.height > @attraction.min_height && @user.tickets > @attraction.tickets
+     elsif @user.height > @attraction.min_height && @user.tickets > @attraction.tickets
        flash[:notice] = "Thanks for riding the #{@attraction.name}!"
          @user.tickets -= @attraction.tickets
          @user.happiness += @attraction.happiness_rating
          @user.nausea += @attraction.nausea_rating
          @user.save
          redirect_to user_path(@user)
-
+     elsif @user.height < @attraction.min_height && @user.tickets < @attraction.tickets
+       flash[:notice] = "You are not tall enough to ride the #{@attraction.name}. You do not have enough tickets to ride the #{@attraction.name}."
+       redirect_to user_path(@user)
+     elsif @user.height < @attraction.min_height
+       flash[:notice] = "You are not tall enough to ride the #{@attraction.name}."
+       redirect_to user_path(@user)
+     elsif @user.tickets < @attraction.tickets
+       flash[:notice] = "You do not have enough tickets to ride the #{@attraction.name}."
+       redirect_to user_path(@user)
      end
    end
 
