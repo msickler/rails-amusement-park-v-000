@@ -1,29 +1,39 @@
 class AttractionsController < ApplicationController
 
-  def index 
+  def index
+    @attractions = Attractions.all 
+  end
 
-  end 
+  def new
+    @attraction = Attraction.new 
+  end
 
-  def new 
+  def create
+    @attraction = Attraction.new(attraction_params)
+    if @attraction.save 
+      redirect_to attraction_path(@attraction)
+    else 
+      redirect_to '/'
+    end    
+  end
 
-  end 
+  def edit
+    @attraction = Attraction.find(params[:id])
+  end
 
-  def create 
+  def update
+    @attraction = Attraction.find(params[:id])
+    if @attraction = Attraction.update(params[:id], attraction_params)
+      redirect_to attraction_path(@attraction)
+    else 
+      redirect_to '/'
+    end 
+  end
 
-  end 
+  private
 
-  def edit 
+  def attraction_params
 
-  end 
+  end
 
-  def update 
-
-  end 
-
-  private 
-
-  def attraction_params 
-
-  end 
-
-end 
+end
