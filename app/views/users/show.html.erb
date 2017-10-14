@@ -1,0 +1,13 @@
+
+<h2> Name: <%= @user.name %></h2>
+Tickets: <%= @user.tickets %><br>
+Mood: <%= @user.mood %><br>
+Height: <%= @user.height %> inches <br>
+
+<% if @user.admin %>
+    <h4>ADMIN</h4>
+  <% end %>
+<p>
+<%= link_to "See attractions", attractions_path %>
+<%= link_to "Log Out", {:action => :destroy, :controller => :sessions}, :method => :post %>
+</p>
