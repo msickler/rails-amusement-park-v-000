@@ -30,9 +30,9 @@ class AttractionsController < ApplicationController
     end
   end
 
-  def show 
+  def show
     @attraction = Attraction.find(params[:id])
-  end 
+  end
 
   private
 
