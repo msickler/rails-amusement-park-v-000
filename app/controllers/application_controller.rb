@@ -7,10 +7,7 @@ class ApplicationController < ActionController::Base
     @user = User.find_by(id: session[:user_id]) || User.new
   end
 
-  def admin
-    if current_user.admin?
-    end
-  end
+
 
   def logged_in?
     current_user.id != nil
