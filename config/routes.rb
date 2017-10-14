@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'static#root'
+  root 'welcome#index'
   resources :attractions
   resources :sessions, only:[:new, :show, :create]
   get '/signin' => 'sessions#new'
