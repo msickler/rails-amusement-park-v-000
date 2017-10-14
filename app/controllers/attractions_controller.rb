@@ -29,7 +29,6 @@ class AttractionsController < ApplicationController
     end
 
     def update
-      def update
      if @attraction.update(attraction_params)
          redirect_to "/attractions/#{@attraction.id}"
      else
