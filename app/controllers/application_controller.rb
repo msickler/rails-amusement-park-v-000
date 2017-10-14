@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
     current_user.id != nil
   end
 
+  def must_log_in
+    if !logged_in 
+      redirect_to welcome_path
+    end 
+  end 
+
 end
