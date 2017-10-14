@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.new
     if @user && @user.authenticate(params[:user][:password])
-      flash[:notice] = "#{@user.name} has logged in."
+      flash[:notice] = "#{@user.name} successfully logged in!"
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
