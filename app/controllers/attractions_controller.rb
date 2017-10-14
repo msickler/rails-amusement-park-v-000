@@ -29,13 +29,15 @@ class AttractionsController < ApplicationController
     end
 
     def update
-      if @attraction.update(attraction_params)
-        flash[:notice] = "#{@attraction.name} has been updated!"
-        redirect_to "/attractions/#{@attraction.id}"
-      else
+      def update
+     if @attraction.update(attraction_params)
+         redirect_to "/attractions/#{@attraction.id}"
+     else
         "/attractions/#{@attraction.id}/edit"
-      end
-    end
+     end
+   end
+      
+      
 
     private
 
