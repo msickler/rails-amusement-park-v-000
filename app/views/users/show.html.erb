@@ -9,4 +9,4 @@ Height: <%= @user.height %> inches <br>
   <% end %>
 
 <%=link_to "See Attractions", attractions_path %>
-<%= link_to "Log Out", destroy_user_session_path, :method => 'delete' %>
+<%= link_to "Log Out", {:action => :destroy, :controller => :sessions}, :method => :post %>
