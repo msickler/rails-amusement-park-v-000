@@ -36,8 +36,8 @@ class AttractionsController < ApplicationController
         "/attractions/#{@attraction.id}/edit"
      end
    end
-      
-      
+
+
 
     private
 
