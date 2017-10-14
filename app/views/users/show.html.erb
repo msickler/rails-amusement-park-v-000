@@ -5,7 +5,7 @@ Mood: <%= @user.mood %><br>
 Height: <%= @user.height %> inches <br>
 
 <% if @user.admin %>
-    <h6>*ADMIN CLEARANCE*</h6>
+    <h4>ADMIN</h4>
   <% end %>
 <p>
 <%= link_to "See attractions", attractions_path %>
