@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def must_log_in
     if !logged_in?
-      redirect_to welcome_path
+      redirect_to '/'
     end
   end
 
