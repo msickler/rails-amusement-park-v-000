@@ -39,7 +39,7 @@ class AttractionsController < ApplicationController
          @user.nausea += @attraction.nausea_rating
          @user.save
          redirect_to user_path(@user)
-     
+
      end
    end
 
