@@ -34,6 +34,17 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.find(params[:id])
   end
 
+  def ride
+    @ride = Ride.new
+    @ride.attraction = Attraction.find(params[:id])
+    @ride.user = User.find(session[:user_id])
+    if flash[:message] = @ride.take_ride
+      redirect_to user_path(@ride.user)
+    else
+     redirect_to "/"
+    end
+  end
+
   private
 
   def attraction_params
