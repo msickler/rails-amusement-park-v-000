@@ -1,6 +1,6 @@
 <h1> <%= @attraction.name %> </h1>
 <p><% if !@user.admin %>
-<%= link_to "Go on this ride", user_attraction_path(@user, @attraction), :method => 'patch' unless @user.admin %>
+<%= button_to "Go on this ride", user_attraction_path(@user, @attraction), :method => :patch unless @user.admin %>
 <% else %>
 <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
 <% end %></p>
