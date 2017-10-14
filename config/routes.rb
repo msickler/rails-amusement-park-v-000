@@ -4,8 +4,7 @@ Rails.application.routes.draw do
     get '/signin' => 'sessions#new'
     root 'welcome#index'
     post'/logout' => 'sessions#destroy', as: :logout
-    resources :users do
-      resources :attractions
-    end
-
+    resources :attractions
+    post 'rides/:id' => 'rides#take_ride'
+    
   end
