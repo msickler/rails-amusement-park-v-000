@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :must_log_in, only: [:show, :update]
+  before_action :current_user, only: [:new, :show, :update]
 
   def new
     @user = User.new
@@ -6,27 +8,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if params[:user][:admin] == 1
-      @user.admin = true
-    end
     if @user.save
       session[:id] = @user.id
       redirect_to user_path(@user)
     else
-      render :new
+      redirect_to new_user_path
     end
 
   end
 
   def show
     @user = User.find(params[:id])
-    if !session[:user_id]
-      redirect_to "/"
-    end
   end
 
-  def signin
-  end
 
   private
 
