@@ -27,7 +27,7 @@ class AttractionsController < ApplicationController
   end
 
   def update
-     @user = current_user 
+     @user = current_user
      if params[:user_id].nil? && current_user.admin?
        @attraction.update(attraction_params)
         flash[:notice] = "#{@attraction.name} has been updated!"
@@ -50,7 +50,7 @@ class AttractionsController < ApplicationController
        redirect_to user_path(@user)
      end
    end
-   
+
   private
 
   def set_attraction
