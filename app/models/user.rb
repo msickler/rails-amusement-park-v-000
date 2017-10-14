@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :name, uniqueness: true
 
-
-  def mood
+def mood
     if happiness.present? && nausea.present?
       happiness > nausea ? "happy" : "sad"
     end
