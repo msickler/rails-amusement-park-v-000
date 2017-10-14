@@ -25,8 +25,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def signin 
-  end 
+  def signin
+  end
 
   private
 
