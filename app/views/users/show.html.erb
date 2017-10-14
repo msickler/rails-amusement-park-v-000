@@ -7,6 +7,7 @@ Height: <%= @user.height %> inches <br>
 <% if @user.admin %>
     <h6>*ADMIN CLEARANCE*</h6>
   <% end %>
-
+<p>
 <%= link_to "See attractions", attractions_path %>
 <%= link_to "Log Out", {:action => :destroy, :controller => :sessions}, :method => :post %>
+</p>
