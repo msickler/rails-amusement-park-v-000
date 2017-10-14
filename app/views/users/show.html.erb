@@ -1,5 +1,9 @@
 
-Name: <%= @user.name %>
-Tickets: <%= @user.tickets %>
-Mood: <%= @user.mood %>
-Height: <%= @user.height %> 
+<h2> Name: <%= @user.name %></h2>
+Tickets: <%= @user.tickets %><br> 
+Mood: <%= @user.mood %><br> 
+Height: <%= @user.height %> inches <br> 
+<%= "ADMIN" if @user.admin? %>
+
+<%=link_to "See Attractions", attractions_path %>
+<%= link_to "Log Out", destroy_user_session_path, :method => 'delete' %>
