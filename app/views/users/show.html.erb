@@ -1,8 +1,8 @@
 
 <h2> Name: <%= @user.name %></h2>
-Tickets: <%= @user.tickets %><br> 
-Mood: <%= @user.mood %><br> 
-Height: <%= @user.height %> inches <br> 
+Tickets: <%= @user.tickets %><br>
+Mood: <%= @user.mood %><br>
+Height: <%= @user.height %> inches <br>
 <%= "ADMIN" if @user.admin? %>
 
 <%=link_to "See Attractions", attractions_path %>
