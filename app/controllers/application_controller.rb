@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
   end
 
   def must_log_in
-    if !logged_in 
+    if !logged_in
       redirect_to welcome_path
-    end 
-  end 
+    end
+  end
 
 end
