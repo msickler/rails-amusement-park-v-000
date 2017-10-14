@@ -7,6 +7,6 @@
    </li>
   <% end %>
 </ul>
-<p><% if @user.admin %>
+<p><% if current_user.admin %>
   <%= link_to "Make New Attraction", new_attraction_path %>
 <% end %></p>
