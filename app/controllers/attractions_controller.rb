@@ -17,8 +17,10 @@ class AttractionsController < ApplicationController
     def create
       @attraction = Attraction.new(attraction_params)
       if @attraction.save
+        flash[:notice] = "#{@attraction.name} was created successfuly!"
         redirect_to "/attractions/#{@attraction.id}"
       else
+        flash[:notice] = "Sorry, something went wrong. Could not create this attraction."
         redirect_to "/attractions/new"
       end
     end
@@ -28,9 +30,10 @@ class AttractionsController < ApplicationController
 
     def update
       if @attraction.update(attraction_params)
-          redirect_to "/attractions/#{@attraction.id}"
+        flash[:notice] = "#{@attraction.name} has been updated!"
+        redirect_to "/attractions/#{@attraction.id}"
       else
-          "/attractions/#{@attraction.id}/edit"
+        "/attractions/#{@attraction.id}/edit"
       end
     end
 
