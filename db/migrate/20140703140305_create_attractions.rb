@@ -7,4 +7,5 @@ class CreateAttractions < ActiveRecord::Migration
       t.integer :happiness_rating
       t.integer :min_height
     end
+    end
 end
