@@ -6,17 +6,12 @@ class ApplicationController < ActionController::Base
   def current_user
     @user = User.find_by(id: session[:user_id]) || User.new
   end
-
-
-
   def logged_in?
     current_user.id != nil
   end
-
   def must_log_in
     if !logged_in?
       redirect_to '/'
     end
   end
-
 end
