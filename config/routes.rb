@@ -6,5 +6,5 @@ Rails.application.routes.draw do
     post'/logout' => 'sessions#destroy', as: :logout
     resources :attractions
     post 'rides/:id' => 'rides#take_ride'
-    
+
   end
