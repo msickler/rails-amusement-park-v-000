@@ -5,8 +5,8 @@
 <%= link_to "Show #{a.name}", attraction_path(a) %>
 <% else %>
 <%= link_to "Go on #{a.name}", attraction_path(a) %>
-<% end %> 
-</li> 
 <% end %>
-  
+</li>
+<% end %>
+
 <%= link_to "New Attraction", new_attraction_path if current_user.admin %>
